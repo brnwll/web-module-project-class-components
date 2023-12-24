@@ -19,10 +19,21 @@ export default class App extends React.Component {
     this.setState({ todos: [...this.state.todos, newTodo] });
   };
 
+  toggleTodo = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+      }),
+    });
+  };
+
   render() {
     return (
       <div>
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} />
         <Form addTodo={this.addTodo} />
         <button>Hide Completed</button>
       </div>
