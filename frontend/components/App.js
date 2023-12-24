@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList todos={this.state.todos} />
         <Form addTodo={this.addTodo} />
         <button>Hide Completed</button>
       </div>
