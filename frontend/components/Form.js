@@ -21,18 +21,16 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            name="todo"
-            type="text"
-            placeholder="Type todo"
-            value={this.state.todo}
-            onChange={this.onChange}
-          />
-          <button>Submit</button>
-        </form>
-      </div>
+      <form onSubmit={this.onSubmit}>
+        <input
+          name="todo"
+          type="text"
+          placeholder="Type todo"
+          value={this.state.todo}
+          onChange={this.onChange}
+        />
+        <button>Submit</button>
+      </form>
     );
   }
 }
