@@ -7,6 +7,7 @@ export default class App extends React.Component {
     super();
     this.state = {
       todos: [],
+      hideCompleted: false,
     };
   }
 
@@ -30,12 +31,22 @@ export default class App extends React.Component {
     });
   };
 
+  toggleHideCompleted = () => {
+    this.setState({ hideCompleted: !this.state.hideCompleted });
+  };
+
   render() {
     return (
       <div>
-        <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} />
+        <TodoList
+          todos={this.state.todos}
+          toggleTodo={this.toggleTodo}
+          hideCompleted={this.state.hideCompleted}
+        />
         <Form addTodo={this.addTodo} />
-        <button>Hide Completed</button>
+        <button onClick={this.toggleHideCompleted}>
+          {this.state.hideCompleted ? "Show Completed" : "Hide Completed"}
+        </button>
       </div>
     );
   }

@@ -12,6 +12,7 @@ export default class TodoList extends React.Component {
               key={todo.id}
               todo={todo}
               toggleTodo={this.props.toggleTodo}
+              hide={this.props.hideCompleted && todo.completed}
             />
           ))}
         </ul>
