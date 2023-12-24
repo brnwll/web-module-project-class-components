@@ -10,11 +10,21 @@ export default class App extends React.Component {
     };
   }
 
+  addTodo = (todo) => {
+    const newTodo = {
+      id: Date.now(),
+      name: todo,
+      completed: false,
+    };
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  };
+
   render() {
     return (
       <div>
         <TodoList />
-        <Form />
+        <Form addTodo={this.addTodo} />
+        <button>Hide Completed</button>
       </div>
     );
   }
