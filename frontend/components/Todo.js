@@ -9,7 +9,7 @@ export default class Todo extends React.Component {
     return (
       <>
         {this.props.hide ? null : (
-          <li onClick={this.handleClick}>
+          <li className="todo" onClick={this.handleClick}>
             {this.props.todo.name}
             {this.props.todo.completed ? " ✔️" : ""}
           </li>

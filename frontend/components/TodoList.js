@@ -5,8 +5,8 @@ export default class TodoList extends React.Component {
   render() {
     return (
       <div>
-        TodoList
-        <ul>
+        <h2>Todos:</h2>
+        <ul id="todos">
           {this.props.todos.map((todo) => (
             <Todo
               key={todo.id}

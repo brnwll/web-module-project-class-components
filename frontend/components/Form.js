@@ -26,6 +26,7 @@ export default class Form extends React.Component {
           <input
             name="todo"
             type="text"
+            placeholder="Type todo"
             value={this.state.todo}
             onChange={this.onChange}
           />
